@@ -119,10 +119,10 @@
   tasks:
     - name: print join cmd
       ansible.builtin.debug:
-        msg: "[Worker] {{ hostvars['join_cmd_holder']['cmd'] }}"
+        msg: "[Worker] {{ hostvars['join_cmd_holder'] }}"
 
     - name: join
-      ansible.builtin.shell: "{{ hostvars['join_cmd_holder']['cmd']['cmd'] }}"
+      ansible.builtin.shell: "{{ hostvars['join_cmd_holder']['cmd']['stdout'] }}"
       become: yes
 
 
